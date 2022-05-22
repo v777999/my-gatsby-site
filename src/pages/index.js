@@ -1,4 +1,5 @@
 import * as React from "react"
+import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 
 // styles
 const pageStyles = {
@@ -124,6 +125,10 @@ const links = [
     color: "#663399",
   },
 ]
+
+if (process.env.NODE_ENV === 'production') {
+	disableReactDevTools();
+}
 
 // markup
 const IndexPage = () => {
